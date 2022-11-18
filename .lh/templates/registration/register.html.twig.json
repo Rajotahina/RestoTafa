@@ -1,0 +1,90 @@
+{
+    "sourceFile": "templates/registration/register.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1668687775071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668687790898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n {% block body %}\n     <h1>Register</h1>\n \n     {{ form_start(registrationForm) }}\n-        \n+    {{ form_row(registrationForm.use) }}\n         {{ form_row(registrationForm.email) }}\n         {{ form_row(registrationForm.plainPassword, {\n             label: 'Password'\n         }) }}\n"
+                },
+                {
+                    "date": 1668687884928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-    <h1>Register</h1>\n-\n-    {{ form_start(registrationForm) }}\n-    {{ form_row(registrationForm.use) }}\n-        {{ form_row(registrationForm.email) }}\n-        {{ form_row(registrationForm.plainPassword, {\n-            label: 'Password'\n-        }) }}\n-        {{ form_row(registrationForm.agreeTerms) }}\n-\n-        <button type=\"submit\" class=\"btn\">Register</button>\n-    {{ form_end(registrationForm) }}\n+   \n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687894028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-   \n+.contana\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687900500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.contana\n+.contanai\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687906699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.contanai\n+.conten\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687916758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.conten\n+.c\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687923318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.c\n+.contenair\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687933362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.contenair\n+.container\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668687938653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,8 @@\n \n {% block title %}Register{% endblock %}\n \n {% block body %}\n-.container\n+<div class=\"container\">\n+    \n+</div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668690733448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,19 @@\n {% block title %}Register{% endblock %}\n \n {% block body %}\n <div class=\"container\">\n-    \n+<h1>Register</h1>\n+\n+{{ form_start(registrationForm) }}\n+{{ form_row(registrationForm.username) }}\n+    {{ form_row(registrationForm.email) }}\n+    {{ form_row(registrationForm.plainPassword, {\n+        label: 'Password'\n+    }) }}\n+    {{ form_row(registrationForm.agreeTerms) }}\n+\n+    <button type=\"submit\" class=\"btn\">Register</button>\n+{{ form_end(registrationForm) }}\n+\n </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668690738886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n     {{ form_row(registrationForm.agreeTerms) }}\n \n     <button type=\"submit\" class=\"btn\">Register</button>\n {{ form_end(registrationForm) }}\n+</div>\n \n-</div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668690826192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,50 @@\n \n     <button type=\"submit\" class=\"btn\">Register</button>\n {{ form_end(registrationForm) }}\n </div>\n-\n+<div class=\"container\">\n+      <div class=\"col-md-6 mx-auto text-center\">\n+         <div class=\"header-title\">\n+            <h1 class=\"wv-heading--title\">\n+               Check out — it’s free!\n+            </h1>\n+            <h2 class=\"wv-heading--subtitle\">\n+               Lorem ipsum dolor sit amet! Neque porro quisquam est qui do dolor amet, adipisci velit...\n+            </h2>\n+         </div>\n+      </div>\n+      <div class=\"row\">\n+         <div class=\"col-md-4 mx-auto\">\n+            <div class=\"myform form \">\n+               <form action=\"{{ form_start(registrationForm) }}\" method=\"post\" name=\"login\">\n+                  <div class=\"form-group\">\n+                     <input type=\"text\" name=\"name\"  class=\"form-control my-input\" id=\"name\" placeholder=\"Name\">\n+                  </div>\n+                  <div class=\"form-group\">\n+                     <input type=\"email\" name=\"email\"  class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n+                  </div>\n+                  <div class=\"form-group\">\n+                     <input type=\"number\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n+                  </div>\n+                  <div class=\"text-center \">\n+                     <button type=\"submit\" class=\" btn btn-block send-button tx-tfm\">Create Your Free Account</button>\n+                  </div>\n+                  <div class=\"col-md-12 \">\n+                     <div class=\"login-or\">\n+                        <hr class=\"hr-or\">\n+                        <span class=\"span-or\">or</span>\n+                     </div>\n+                  </div>\n+                  <div class=\"form-group\">\n+                     <a class=\"btn btn-block g-button\" href=\"#\">\n+                     <i class=\"fa fa-google\"></i> Sign up with Google\n+                     </a>\n+                  </div>\n+                  <p class=\"small mt-3\">By signing up, you are indicating that you have read and agree to the <a href=\"#\" class=\"ps-hero__content__link\">Terms of Use</a> and <a href=\"#\">Privacy Policy</a>.\n+                  </p>\n+               </form>\n+            </div>\n+         </div>\n+      </div>\n+   </div>\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668691048211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n             <div class=\"myform form \">\n                <form action=\"{{ form_start(registrationForm) }}\" method=\"post\" name=\"login\">\n                   <div class=\"form-group\">\n                      <input type=\"text\" name=\"name\"  class=\"form-control my-input\" id=\"name\" placeholder=\"Name\">\n+                     \n                   </div>\n                   <div class=\"form-group\">\n                      <input type=\"email\" name=\"email\"  class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n                   </div>\n"
+                },
+                {
+                    "date": 1668691066639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,12 +33,13 @@\n             <div class=\"myform form \">\n                <form action=\"{{ form_start(registrationForm) }}\" method=\"post\" name=\"login\">\n                   <div class=\"form-group\">\n                      <input type=\"text\" name=\"name\"  class=\"form-control my-input\" id=\"name\" placeholder=\"Name\">\n-                     \n+                     {{ form_row(registrationForm.username) }}\n                   </div>\n                   <div class=\"form-group\">\n                      <input type=\"email\" name=\"email\"  class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n+                     {{ form_row(registrationForm.email) }}\n                   </div>\n                   <div class=\"form-group\">\n                      <input type=\"number\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n                   </div>\n"
+                },
+                {
+                    "date": 1668691112065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n                      <input type=\"email\" name=\"email\"  class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n                      {{ form_row(registrationForm.email) }}\n                   </div>\n                   <div class=\"form-group\">\n-                     <input type=\"number\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n+                     <input type=\"pac\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n                   </div>\n                   <div class=\"text-center \">\n                      <button type=\"submit\" class=\" btn btn-block send-button tx-tfm\">Create Your Free Account</button>\n                   </div>\n"
+                },
+                {
+                    "date": 1668691122888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,10 @@\n                      <input type=\"email\" name=\"email\"  class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n                      {{ form_row(registrationForm.email) }}\n                   </div>\n                   <div class=\"form-group\">\n-                     <input type=\"pac\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n+                     <input type=\"password\" min=\"0\" name=\"phone\" id=\"phone\"  class=\"form-control my-input\" placeholder=\"Phone\">\n+                     \n                   </div>\n                   <div class=\"text-center \">\n                      <button type=\"submit\" class=\" btn btn-block send-button tx-tfm\">Create Your Free Account</button>\n                   </div>\n"
+                },
+                {
+                    "date": 1668691136657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         label: 'Password'\n     }) }}\n                   </div>\n                   <div class=\"text-center \">\n-                     <button type=\"submit\" class=\" btn btn-block send-button tx-tfm\" >Create Your Free Account</button>\n+                     <button type=\"submit\" class=\" btn btn-block send-button tx-tfm\" v>Create Your Free Account</button>\n                   </div>\n                   <div class=\"col-md-12 \">\n                      <div class=\"login-or\">\n                         <hr class=\"hr-or\">\n"
+                },
+                {
+                    "date": 1668693357017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n                   <div   class=\"form-control my-input\" id=\"email\" placeholder=\"Email\">\n                   {{ form_row(registrationForm.agreeTerms) }}\n                     </div>\n                   <div class=\"text-center \">\n-                     <button type=\"submit\" class=\" btn btn-primary send-button tx-tfm\" value=\"Create Your Free Accon\" >\n+                     <button type=\"submit\" class=\" btn btn-primary send-button tx-tfm\" value=\"Create Your Free Acco\" >\n                      {{ form_end(registrationForm) }}\n                          {# Create Your Free Account #}\n                 </button>\n                   </div>\n"
+                }
+            ],
+            "date": 1668687775071,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Register{% endblock %}\n\n{% block body %}\n    <h1>Register</h1>\n\n    {{ form_start(registrationForm) }}\n        \n        {{ form_row(registrationForm.email) }}\n        {{ form_row(registrationForm.plainPassword, {\n            label: 'Password'\n        }) }}\n        {{ form_row(registrationForm.agreeTerms) }}\n\n        <button type=\"submit\" class=\"btn\">Register</button>\n    {{ form_end(registrationForm) }}\n{% endblock %}\n"
+        }
+    ]
+}

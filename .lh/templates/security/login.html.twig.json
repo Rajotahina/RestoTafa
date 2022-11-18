@@ -1,0 +1,54 @@
+{
+    "sourceFile": "templates/security/login.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1668688008343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668688013795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <div class=\"mb-3\">\n             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>\n         </div>\n     {% endif %}\n-    \n+    <div class=\"container\"></div>\n     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n     <label for=\"inputEmail\">Email</label>\n     <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n     <label for=\"inputPassword\">Password</label>\n"
+                },
+                {
+                    "date": 1668688019693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,18 +12,12 @@\n         <div class=\"mb-3\">\n             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>\n         </div>\n     {% endif %}\n-    <div class=\"container\"></div>\n-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n-    <label for=\"inputEmail\">Email</label>\n-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n-    <label for=\"inputPassword\">Password</label>\n-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n+    <div class=\"container\">\n \n-    <input type=\"hidden\" name=\"_csrf_token\"\n-           value=\"{{ csrf_token('authenticate') }}\"\n-    >\n+    </div>\n+    \n \n     {#\n         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.\n         See https://symfony.com/doc/current/security/remember_me.html\n"
+                },
+                {
+                    "date": 1668688025609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,17 @@\n             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>\n         </div>\n     {% endif %}\n     <div class=\"container\">\n+    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n+    <label for=\"inputEmail\">Email</label>\n+    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n+    <label for=\"inputPassword\">Password</label>\n+    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n \n+    <input type=\"hidden\" name=\"_csrf_token\"\n+           value=\"{{ csrf_token('authenticate') }}\"\n+    >\n     </div>\n     \n \n     {#\n"
+                },
+                {
+                    "date": 1668688031257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,17 +13,17 @@\n             You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>\n         </div>\n     {% endif %}\n     <div class=\"container\">\n-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n-    <label for=\"inputEmail\">Email</label>\n-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n-    <label for=\"inputPassword\">Password</label>\n-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n+        <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n+        <label for=\"inputEmail\">Email</label>\n+        <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n+        <label for=\"inputPassword\">Password</label>\n+        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n \n-    <input type=\"hidden\" name=\"_csrf_token\"\n-           value=\"{{ csrf_token('authenticate') }}\"\n-    >\n+        <input type=\"hidden\" name=\"_csrf_token\"\n+            value=\"{{ csrf_token('authenticate') }}\"\n+        >\n     </div>\n     \n \n     {#\n"
+                },
+                {
+                    "date": 1668688061102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,6 @@\n             </label>\n         </div>\n     #}\n \n-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">\n-        Sign in\n-    </button>\n-</form>\n+   \n {% endblock %}\n"
+                },
+                {
+                    "date": 1668688069166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n         <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n \n         <input type=\"hidden\" name=\"_csrf_token\"\n             value=\"{{ csrf_token('authenticate') }}\"\n+\n         >\n+        \n     </div>\n     \n \n     {#\n"
+                },
+                {
+                    "date": 1668688079997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,12 @@\n         <input type=\"hidden\" name=\"_csrf_token\"\n             value=\"{{ csrf_token('authenticate') }}\"\n \n         >\n-        \n+        <button class=\"btn btn-lg btn-primary\" type=\"submit\">\n+        Sign in\n+        </button>\n+\n     </div>\n     \n \n     {#\n"
+                },
+                {
+                    "date": 1668688086369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n         Sign in\n         </button>\n \n     </div>\n+</form>\n     \n \n     {#\n         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.\n"
+                },
+                {
+                    "date": 1668688118710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n         <input type=\"hidden\" name=\"_csrf_token\"\n             value=\"{{ csrf_token('authenticate') }}\"\n \n-        >br\n+        ><br>\n         <button class=\"btn btn-lg btn-primary\" type=\"submit\">\n         Sign in\n         </button>\n \n"
+                }
+            ],
+            "date": 1668688008343,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Log in!{% endblock %}\n\n{% block body %}\n<form method=\"post\">\n    {% if error %}\n        <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>\n    {% endif %}\n\n    {% if app.user %}\n        <div class=\"mb-3\">\n            You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>\n        </div>\n    {% endif %}\n    \n    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n    <label for=\"inputEmail\">Email</label>\n    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>\n    <label for=\"inputPassword\">Password</label>\n    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>\n\n    <input type=\"hidden\" name=\"_csrf_token\"\n           value=\"{{ csrf_token('authenticate') }}\"\n    >\n\n    {#\n        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.\n        See https://symfony.com/doc/current/security/remember_me.html\n\n        <div class=\"checkbox mb-3\">\n            <label>\n                <input type=\"checkbox\" name=\"_remember_me\"> Remember me\n            </label>\n        </div>\n    #}\n\n    <button class=\"btn btn-lg btn-primary\" type=\"submit\">\n        Sign in\n    </button>\n</form>\n{% endblock %}\n"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/Form/RegistrationFormType.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1668687686491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668687693464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-        \n+            ->e\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                },
+                {
+                    "date": 1668687700510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->e\n+            ->->add('task', TextType::class);\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                },
+                {
+                    "date": 1668687706689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->->add('task', TextType::class);\n+            ->->add('ese', TextType::class);\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                },
+                {
+                    "date": 1668687717691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->->add('ese', TextType::class);\n+            ->add('username', TextType::class);\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                },
+                {
+                    "date": 1668687731864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->add('username', TextType::class);\n+            ->add('username', TextType::class)\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                },
+                {
+                    "date": 1668687827599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n {\n     public function buildForm(FormBuilderInterface $builder, array $options): void\n     {\n         $builder\n-            ->add('username', TextType::class)\n+            ->add('username')\n             ->add('email')\n             ->add('agreeTerms', CheckboxType::class, [\n                 'mapped' => false,\n                 'constraints' => [\n"
+                }
+            ],
+            "date": 1668687686491,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Form;\n\nuse App\\Entity\\UserClient;\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\CheckboxType;\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\PasswordType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\nuse Symfony\\Component\\OptionsResolver\\OptionsResolver;\nuse Symfony\\Component\\Validator\\Constraints\\IsTrue;\nuse Symfony\\Component\\Validator\\Constraints\\Length;\nuse Symfony\\Component\\Validator\\Constraints\\NotBlank;\n\nclass RegistrationFormType extends AbstractType\n{\n    public function buildForm(FormBuilderInterface $builder, array $options): void\n    {\n        $builder\n        \n            ->add('email')\n            ->add('agreeTerms', CheckboxType::class, [\n                'mapped' => false,\n                'constraints' => [\n                    new IsTrue([\n                        'message' => 'You should agree to our terms.',\n                    ]),\n                ],\n            ])\n            ->add('plainPassword', PasswordType::class, [\n                // instead of being set onto the object directly,\n                // this is read and encoded in the controller\n                'mapped' => false,\n                'attr' => ['autocomplete' => 'new-password'],\n                'constraints' => [\n                    new NotBlank([\n                        'message' => 'Please enter a password',\n                    ]),\n                    new Length([\n                        'min' => 6,\n                        'minMessage' => 'Your password should be at least {{ limit }} characters',\n                        // max length allowed by Symfony for security reasons\n                        'max' => 4096,\n                    ]),\n                ],\n            ])\n        ;\n    }\n\n    public function configureOptions(OptionsResolver $resolver): void\n    {\n        $resolver->setDefaults([\n            'data_class' => UserClient::class,\n        ]);\n    }\n}\n"
+        }
+    ]
+}

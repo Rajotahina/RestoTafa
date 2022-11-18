@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/Entity/Categorie.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1668760011744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668760034892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n use Doctrine\\Common\\Collections\\Collection;\n use Doctrine\\ORM\\Mapping as ORM;\n \n #[ORM\\Entity(repositoryClass: CategorieRepository::class)]\n-class categorie\n+class Categorie\n {\n     #[ORM\\Id]\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n"
+                },
+                {
+                    "date": 1668763402177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,5 +101,6 @@\n         }\n \n         return $this;\n     }\n+    \n }\n"
+                },
+                {
+                    "date": 1668764176421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,10 @@\n \n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n+    \n+\n     #[ORM\\OneToMany(mappedBy: 'categorie', targetEntity: Product::class)]\n     private Collection $products;\n \n     public function __construct()\n@@ -101,6 +103,9 @@\n         }\n \n         return $this;\n     }\n-    \n+    public function __toString()\n+    {\n+        return $this->name;\n+    }\n }\n"
+                },
+                {
+                    "date": 1668764185758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n \n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n-    \n+    #[ORM\\Column]\n+    private ?\\DateTimeImmutable $update = null;\n \n     #[ORM\\OneToMany(mappedBy: 'categorie', targetEntity: Product::class)]\n     private Collection $products;\n \n"
+                },
+                {
+                    "date": 1668764200560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n     #[ORM\\Column]\n-    private ?\\DateTimeImmutable $update = null;\n+    private ?\\DateTimeImmutable $updated = null;\n \n     #[ORM\\OneToMany(mappedBy: 'categorie', targetEntity: Product::class)]\n     private Collection $products;\n \n@@ -74,8 +74,9 @@\n         $this->createdAt = $createdAt;\n \n         return $this;\n     }\n+    \n \n     /**\n      * @return Collection<int, Product>\n      */\n"
+                },
+                {
+                    "date": 1668764214536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,21 @@\n         $this->createdAt = $createdAt;\n \n         return $this;\n     }\n-    \n \n+    public function getU(): ?\\DateTimeImmutable\n+    {\n+        return $this->createdAt;\n+    }\n+\n+    public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n+    {\n+        $this->createdAt = $createdAt;\n+\n+        return $this;\n+    }\n+\n     /**\n      * @return Collection<int, Product>\n      */\n     public function getProducts(): Collection\n"
+                },
+                {
+                    "date": 1668764220221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n \n         return $this;\n     }\n \n-    public function getU(): ?\\DateTimeImmutable\n+    public function getUpdated(): ?\\DateTimeImmutable\n     {\n         return $this->createdAt;\n     }\n \n"
+                },
+                {
+                    "date": 1668764229968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n     }\n \n     public function getUpdated(): ?\\DateTimeImmutable\n     {\n-        return $this->createdAt;\n+        return $this->updated;\n     }\n \n     public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n     {\n"
+                },
+                {
+                    "date": 1668764240321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n     }\n \n     public function getUpdated(): ?\\DateTimeImmutable\n     {\n-        return $this->updated;\n+        return $this->updatedAt;\n     }\n \n     public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n     {\n"
+                },
+                {
+                    "date": 1668764248106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n \n         return $this;\n     }\n \n-    public function getUpdated(): ?\\DateTimeImmutable\n+    public function getUpdatedA(): ?\\DateTimeImmutable\n     {\n         return $this->updatedAt;\n     }\n \n"
+                },
+                {
+                    "date": 1668764260654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,14 +75,14 @@\n \n         return $this;\n     }\n \n-    public function getUpdatedA(): ?\\DateTimeImmutable\n+    public function getUpdatedAt(): ?\\DateTimeImmutable\n     {\n         return $this->updatedAt;\n     }\n \n-    public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n+    public function setUpdatAt(\\DateTimeImmutable $createdAt): self\n     {\n         $this->createdAt = $createdAt;\n \n         return $this;\n"
+                },
+                {
+                    "date": 1668764271980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,9 @@\n     {\n         return $this->updatedAt;\n     }\n \n-    public function setUpdatAt(\\DateTimeImmutable $createdAt): self\n+    public function setUpdatedAt(\\DateTimeImmutable $updaAt): self\n     {\n         $this->createdAt = $createdAt;\n \n         return $this;\n"
+                },
+                {
+                    "date": 1668764284951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n     }\n \n     public function setUpdatedAt(\\DateTimeImmutable $updatedAt): self\n     {\n-        $this->upAt = $createdAt;\n+        $this->updAt = $createdAt;\n \n         return $this;\n     }\n \n"
+                }
+            ],
+            "date": 1668760011744,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\CategorieRepository;\nuse Doctrine\\Common\\Collections\\ArrayCollection;\nuse Doctrine\\Common\\Collections\\Collection;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n#[ORM\\Entity(repositoryClass: CategorieRepository::class)]\nclass categorie\n{\n    #[ORM\\Id]\n    #[ORM\\GeneratedValue]\n    #[ORM\\Column]\n    private ?int $id = null;\n\n    #[ORM\\Column(length: 255)]\n    private ?string $name = null;\n\n    #[ORM\\Column]\n    private ?bool $active = null;\n\n    #[ORM\\Column]\n    private ?\\DateTimeImmutable $createdAt = null;\n\n    #[ORM\\OneToMany(mappedBy: 'categorie', targetEntity: Product::class)]\n    private Collection $products;\n\n    public function __construct()\n    {\n        $this->products = new ArrayCollection();\n    }\n\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getName(): ?string\n    {\n        return $this->name;\n    }\n\n    public function setName(string $name): self\n    {\n        $this->name = $name;\n\n        return $this;\n    }\n\n    public function isActive(): ?bool\n    {\n        return $this->active;\n    }\n\n    public function setActive(bool $active): self\n    {\n        $this->active = $active;\n\n        return $this;\n    }\n\n    public function getCreatedAt(): ?\\DateTimeImmutable\n    {\n        return $this->createdAt;\n    }\n\n    public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n    {\n        $this->createdAt = $createdAt;\n\n        return $this;\n    }\n\n    /**\n     * @return Collection<int, Product>\n     */\n    public function getProducts(): Collection\n    {\n        return $this->products;\n    }\n\n    public function addProduct(Product $product): self\n    {\n        if (!$this->products->contains($product)) {\n            $this->products->add($product);\n            $product->setCategorie($this);\n        }\n\n        return $this;\n    }\n\n    public function removeProduct(Product $product): self\n    {\n        if ($this->products->removeElement($product)) {\n            // set the owning side to null (unless already changed)\n            if ($product->getCategorie() === $this) {\n                $product->setCategorie(null);\n            }\n        }\n\n        return $this;\n    }\n}\n"
+        }
+    ]
+}

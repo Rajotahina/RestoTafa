@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/Entity/Product.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1668760227161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668760254773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     private ?\\DateTimeImmutable $createdAt = null;\n \n     #[ORM\\ManyToOne(inversedBy: 'products')]\n     #[ORM\\JoinColumn(nullable: false)]\n-    private ?categorie $Categorie = null;\n+    private ?Categorie $Categorie = null;\n \n     public function getId(): ?int\n     {\n         return $this->id;\n@@ -127,9 +127,9 @@\n \n         return $this;\n     }\n \n-    public function getCategorie(): ?categorie\n+    public function getCategorie(): ?Categorie\n     {\n         return $this->categorie;\n     }\n \n"
+                },
+                {
+                    "date": 1668760270912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,11 +132,11 @@\n     {\n         return $this->categorie;\n     }\n \n-    public function setCategorie(?categorie $categorie): self\n+    public function setCategorie(?Categorie $categorie): self\n     {\n-        $this->categorie = $categorie;\n+        $this->Categorie = $categorie;\n \n         return $this;\n     }\n }\n"
+                },
+                {
+                    "date": 1668760279288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,11 +132,11 @@\n     {\n         return $this->categorie;\n     }\n \n-    public function setCategorie(?Categorie $categorie): self\n+    public function setCategorie(?Categorie $Categorie): self\n     {\n-        $this->Categorie = $categorie;\n+        $this->Categorie = $Categorie;\n \n         return $this;\n     }\n }\n"
+                },
+                {
+                    "date": 1668760286070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,9 @@\n     }\n \n     public function getCategorie(): ?Categorie\n     {\n-        return $this->categorie;\n+        return $this->Categorie;\n     }\n \n     public function setCategorie(?Categorie $Categorie): self\n     {\n"
+                },
+                {
+                    "date": 1668772094802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n-    #[ORM\\Column]\n+    #[ORM\\Column()]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n     #[ORM\\ManyToOne(inversedBy: 'products')]\n     #[ORM\\JoinColumn(nullable: false)]\n"
+                },
+                {
+                    "date": 1668772100095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n     #[ORM\\Column]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n-    #[ORM\\Column()]\n+    #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n     #[ORM\\ManyToOne(inversedBy: 'products')]\n     #[ORM\\JoinColumn(nullable: false)]\n"
+                },
+                {
+                    "date": 1668772237754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     #[ORM\\Column]\n     private ?bool $active = null;\n \n-    #[ORM\\Column]\n+    #[ORM\\Column()]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n     #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $createdAt = null;\n"
+                },
+                {
+                    "date": 1668772245463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     #[ORM\\Column]\n     private ?bool $active = null;\n \n-    #[ORM\\Column()]\n+    #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n     #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $createdAt = null;\n"
+                },
+                {
+                    "date": 1668772739157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,9 @@\n \n     #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n-    #[ORM\\Column(nullable:true)]\n-    private ?\\DateTimeImmutable $createdAt = null;\n+   \n \n     #[ORM\\ManyToOne(inversedBy: 'products')]\n     #[ORM\\JoinColumn(nullable: false)]\n     private ?Categorie $Categorie = null;\n"
+                },
+                {
+                    "date": 1668772745450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,13 @@\n     #[ORM\\Column]\n     private ?bool $active = null;\n \n     #[ORM\\Column(nullable:true)]\n+    private ?\\DateTimeImmutable $createdAt = null;\n+\n+    #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $updatedAt = null;\n \n-   \n \n     #[ORM\\ManyToOne(inversedBy: 'products')]\n     #[ORM\\JoinColumn(nullable: false)]\n     private ?Categorie $Categorie = null;\n"
+                },
+                {
+                    "date": 1668772791842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     #[ORM\\Column]\n     private ?bool $active = null;\n \n-    #[ORM\\Column(nullable:true)]\n+    #[ORM\\Column(nullable:fa)]\n     private ?\\DateTimeImmutable $createdAt = null;\n \n     #[ORM\\Column(nullable:true)]\n     private ?\\DateTimeImmutable $updatedAt = null;\n"
+                }
+            ],
+            "date": 1668760227161,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\ProductRepository;\nuse Doctrine\\DBAL\\Types\\Types;\nuse Doctrine\\ORM\\Mapping as ORM;\n\n#[ORM\\Entity(repositoryClass: ProductRepository::class)]\nclass Product\n{\n    #[ORM\\Id]\n    #[ORM\\GeneratedValue]\n    #[ORM\\Column]\n    private ?int $id = null;\n\n    #[ORM\\Column(length: 255)]\n    private ?string $name = null;\n\n    #[ORM\\Column(type: Types::TEXT)]\n    private ?string $description = null;\n\n    #[ORM\\Column(type: Types::DECIMAL, precision: 10, scale: 2)]\n    private ?string $price = null;\n\n    #[ORM\\Column(length: 255, nullable: true)]\n    private ?string $image = null;\n\n    #[ORM\\Column]\n    private ?bool $active = null;\n\n    #[ORM\\Column]\n    private ?\\DateTimeImmutable $updatedAt = null;\n\n    #[ORM\\Column]\n    private ?\\DateTimeImmutable $createdAt = null;\n\n    #[ORM\\ManyToOne(inversedBy: 'products')]\n    #[ORM\\JoinColumn(nullable: false)]\n    private ?categorie $Categorie = null;\n\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getName(): ?string\n    {\n        return $this->name;\n    }\n\n    public function setName(string $name): self\n    {\n        $this->name = $name;\n\n        return $this;\n    }\n\n    public function getDescription(): ?string\n    {\n        return $this->description;\n    }\n\n    public function setDescription(string $description): self\n    {\n        $this->description = $description;\n\n        return $this;\n    }\n\n    public function getPrice(): ?string\n    {\n        return $this->price;\n    }\n\n    public function setPrice(string $price): self\n    {\n        $this->price = $price;\n\n        return $this;\n    }\n\n    public function getImage(): ?string\n    {\n        return $this->image;\n    }\n\n    public function setImage(?string $image): self\n    {\n        $this->image = $image;\n\n        return $this;\n    }\n\n    public function isActive(): ?bool\n    {\n        return $this->active;\n    }\n\n    public function setActive(bool $active): self\n    {\n        $this->active = $active;\n\n        return $this;\n    }\n\n    public function getUpdatedAt(): ?\\DateTimeImmutable\n    {\n        return $this->updatedAt;\n    }\n\n    public function setUpdatedAt(\\DateTimeImmutable $updatedAt): self\n    {\n        $this->updatedAt = $updatedAt;\n\n        return $this;\n    }\n\n    public function getCreatedAt(): ?\\DateTimeImmutable\n    {\n        return $this->createdAt;\n    }\n\n    public function setCreatedAt(\\DateTimeImmutable $createdAt): self\n    {\n        $this->createdAt = $createdAt;\n\n        return $this;\n    }\n\n    public function getCategorie(): ?categorie\n    {\n        return $this->categorie;\n    }\n\n    public function setCategorie(?categorie $categorie): self\n    {\n        $this->categorie = $categorie;\n\n        return $this;\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/Controller/Admin/CategorieCrudController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1668760062340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668760885787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n \n namespace App\\Controller\\Admin;\n \n-use App\\Entity\\categorie;\n+use App\\Entity\\Categorie;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class CategorieCrudController extends AbstractCrudController\n {\n@@ -11,9 +11,9 @@\n     {\n         return Categorie::class;\n     }\n \n-    /*\n+    \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n             IdField::new('id'),\n"
+                },
+                {
+                    "date": 1668760903620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,12 @@\n     \n     public function configureFields(string $pageName): iterable\n     {\n         return [\n-            IdField::new('id'),\n-            TextField::new('title'),\n-            TextEditorField::new('description'),\n+            IdField::new('id')->hideOnForm(),\n+            TextField::new('name'),\n+            BooleanField::new('active'),\n+            DateTimeField::new('updatedAt')->hideOnForm(),\n         ];\n     }\n-    */\n+    \n }\n"
+                },
+                {
+                    "date": 1668760909632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Categorie;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class CategorieCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1668760917232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Categorie;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\BooleanField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class CategorieCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1668760922715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n use App\\Entity\\Categorie;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\BooleanField;\n+use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n \n class CategorieCrudController extends AbstractCrudController\n {\n"
+                },
+                {
+                    "date": 1668764083182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,11 @@\n             BooleanField::new('active'),\n             DateTimeField::new('updatedAt')->hideOnForm(),\n         ];\n     }\n-    \n+    public function persistEntity(EntityManagerInterface $em, $entityInstance): void\n+    {\n+        if(!$entityInstance instanceof category) return;\n+        $entityInstance->getUpdatedAt(new \\DateTimeImmutable() );\n+        parent::persistEntity($em ,$entityInstance);\n+    }\n }\n"
+                },
+                {
+                    "date": 1668764094395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n namespace App\\Controller\\Admin;\n \n use App\\Entity\\Categorie;\n+use Doctrine\\ORM\\EntityManagerInterface;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\IdField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\TextField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\BooleanField;\n use EasyCorp\\Bundle\\EasyAdminBundle\\Field\\DateTimeField;\n@@ -27,9 +28,9 @@\n         ];\n     }\n     public function persistEntity(EntityManagerInterface $em, $entityInstance): void\n     {\n-        if(!$entityInstance instanceof category) return;\n+        if(!$entityInstance instanceof categorie) return;\n         $entityInstance->getUpdatedAt(new \\DateTimeImmutable() );\n         parent::persistEntity($em ,$entityInstance);\n     }\n }\n"
+                },
+                {
+                    "date": 1668764933115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             IdField::new('id')->hideOnForm(),\n             TextField::new('name'),\n             BooleanField::new('active'),\n             DateTimeField::new('updatedAt')->hideOnForm(),\n-            \n+            DateTimeField::new('updatedAt')->hideOnForm(),\n         ];\n     }\n     public function persistEntity(EntityManagerInterface $em, $entityInstance): void\n     {\n"
+                },
+                {
+                    "date": 1668764949610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             IdField::new('id')->hideOnForm(),\n             TextField::new('name'),\n             BooleanField::new('active'),\n             DateTimeField::new('updatedAt')->hideOnForm(),\n-            DateTimeField::new('create')->hideOnForm(),\n+            DateTimeField::new('created')->hideOnForm(),\n         ];\n     }\n     public function persistEntity(EntityManagerInterface $em, $entityInstance): void\n     {\n"
+                }
+            ],
+            "date": 1668760062340,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller\\Admin;\n\nuse App\\Entity\\categorie;\nuse EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\AbstractCrudController;\n\nclass CategorieCrudController extends AbstractCrudController\n{\n    public static function getEntityFqcn(): string\n    {\n        return Categorie::class;\n    }\n\n    /*\n    public function configureFields(string $pageName): iterable\n    {\n        return [\n            IdField::new('id'),\n            TextField::new('title'),\n            TextEditorField::new('description'),\n        ];\n    }\n    */\n}\n"
+        }
+    ]
+}

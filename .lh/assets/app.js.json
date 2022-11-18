@@ -1,0 +1,118 @@
+{
+    "sourceFile": "assets/app.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1668675229625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668675237755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n+re\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675247997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-re\n+require \"bootstra\"\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675258080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require \"bootstra\"\n+require \"bootstrap\"\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675274706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require \"bootstrap\"\n+require \"bootstrap\",\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675283923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require \"bootstrap\",\n+require \"bootstrap\";\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675290122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require \"bootstrap\";\n+require ()\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675297181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require ()\n+require (\"bootstrap\")\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668675302266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n \n // start the Stimulus application\n-require (\"bootstrap\")\n+require (\"bootstrap\");\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668677013744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n  */\n \n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n+imp\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n"
+                },
+                {
+                    "date": 1668677020608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n  */\n \n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n-imp\n+import '.'\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n"
+                },
+                {
+                    "date": 1668677033999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n  */\n \n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n-import '.'\n+import './bootstrap'\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n"
+                },
+                {
+                    "date": 1668677041751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n  */\n \n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n-import './bootstrap'\n+import './b'\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n"
+                },
+                {
+                    "date": 1668677053433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n  */\n \n // any CSS you import will output into a single css file (app.css in this case)\n import './styles/app.css';\n-import './b'\n \n+\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n \n"
+                },
+                {
+                    "date": 1668678388841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,5 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n \n+\n"
+                },
+                {
+                    "date": 1668678395077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n+require \n \n-\n"
+                },
+                {
+                    "date": 1668678403674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n-require \n+require (\"st\")\n \n"
+                },
+                {
+                    "date": 1668678414473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n-require (\"st\")\n+require (\"./styles\")\n \n"
+                },
+                {
+                    "date": 1668678421694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n-require (\"./styles\")\n+require (\"./styles/js\")\n \n"
+                },
+                {
+                    "date": 1668678430458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n-require (\"./styles/js\")\n+require (\"./styles/js/mdb.min.js\")\n \n"
+                },
+                {
+                    "date": 1668678898795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,6 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n require (\"./styles/js/mdb.min.js\")\n+require \n \n"
+                },
+                {
+                    "date": 1668678910650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n require (\"./styles/js/mdb.min.js\")\n-require \n+require (\"\")\n \n"
+                },
+                {
+                    "date": 1668678918770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n require (\"./styles/js/mdb.min.js\")\n-require (\"\")\n+require (\"./styles\")\n \n"
+                },
+                {
+                    "date": 1668678924525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n require (\"./styles/js/mdb.min.js\")\n-require (\"./styles\")\n+require (\"./styles/js\")\n \n"
+                },
+                {
+                    "date": 1668678933962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n require (\"./styles/js/mdb.min.js\")\n-require (\"./styles/js\")\n+require (\"./styles/js/mdb.min\")\n \n"
+                },
+                {
+                    "date": 1668678941612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n \n // start the Stimulus application\n require (\"bootstrap\");\n import './bootstrap';\n-require (\"./styles/js/mdb.min.js\")\n-require (\"./styles/js/mdb.min\")\n+require (\"./styles/js/mdb.min.js\");\n+require (\"./styles/js/mdb.min\");\n \n"
+                }
+            ],
+            "date": 1668675229625,
+            "name": "Commit-0",
+            "content": "/*\n * Welcome to your app's main JavaScript file!\n *\n * We recommend including the built version of this JavaScript file\n * (and its CSS file) in your base layout (base.html.twig).\n */\n\n// any CSS you import will output into a single css file (app.css in this case)\nimport './styles/app.css';\n\n// start the Stimulus application\nimport './bootstrap';\n\n"
+        }
+    ]
+}

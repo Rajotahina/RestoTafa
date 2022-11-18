@@ -1,0 +1,54 @@
+{
+    "sourceFile": "assets/styles/app.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1668678289819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668678295774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-\n+@import \n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678301949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \n+@import \"~\"\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678311666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \"~\"\n+@import \"\"\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678324305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \"\"\n+@import \"/sty\"\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678332046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \"/sty\"\n+@import \"./styles/\"\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678347766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \"./styles/\"\n+@import \"./css/\"\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678354805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n-@import \"./css/\"\n+@import \"./css/mdb.min.css\";\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678861192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n @import \"./css/mdb.min.css\";\n+\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                },
+                {
+                    "date": 1668678868205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n @import \"~bootstrap/dist/css/bootstrap.min.css\";\n @import \"./css/mdb.min.css\";\n-@\n+@i\n body {\n     background-color: lightgray;\n }\n  .form-white.input-group>.form-control:focus {\n"
+                }
+            ],
+            "date": 1668678289819,
+            "name": "Commit-0",
+            "content": "@import \"~bootstrap/dist/css/bootstrap.min.css\";\n\nbody {\n    background-color: lightgray;\n}\n .form-white.input-group>.form-control:focus {\n    border-color: black;\n    box-shadow: inset 0 0 0 1px black;\n  }\n  \n  .navbar-dark .navbar-nav .nav-link {\n    color: blue;\n  } "
+        }
+    ]
+}

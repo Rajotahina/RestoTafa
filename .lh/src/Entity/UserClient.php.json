@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Entity/UserClient.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1668686804421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668686812393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,8 @@\n     private ?string $password = null;\n \n    \n \n-    #[ORM\\Column(length: 255)]\n-    private ?string $username = null;\n-\n     public function getId(): ?int\n     {\n         return $this->id;\n     }\n"
+                },
+                {
+                    "date": 1668686822189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     #[ORM\\Id]\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n     private ?int $id = null;\n-\n+        \n     #[ORM\\Column(length: 180, unique: true)]\n     private ?string $email = null;\n \n     #[ORM\\Column]\n@@ -26,9 +26,8 @@\n      */\n     #[ORM\\Column]\n     private ?string $password = null;\n \n-   \n \n     public function getId(): ?int\n     {\n         return $this->id;\n"
+                },
+                {
+                    "date": 1668686846049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,12 @@\n     #[ORM\\Id]\n     #[ORM\\GeneratedValue]\n     #[ORM\\Column]\n     private ?int $id = null;\n-        \n+    \n+    #[ORM\\Column(length: 255)]\n+    private ?string $username = null;\n+\n     #[ORM\\Column(length: 180, unique: true)]\n     private ?string $email = null;\n \n     #[ORM\\Column]\n@@ -97,19 +100,19 @@\n         // If you store any temporary, sensitive data on the user, clear it here\n         // $this->plainPassword = null;\n     }\n \n-    public function getUser(): ?string\n-    {\n-        return $this->User;\n-    }\n+    // public function getUser(): ?string\n+    // {\n+    //     return $this->User;\n+    // }\n \n-    public function setUser(string $User): self\n-    {\n-        $this->User = $User;\n+    // public function setUser(string $User): self\n+    // {\n+    //     $this->User = $User;\n \n-        return $this;\n-    }\n+    //     return $this;\n+    // }\n \n     public function getUsername(): ?string\n     {\n         return $this->username;\n"
+                }
+            ],
+            "date": 1668686804421,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Entity;\n\nuse App\\Repository\\UserClientRepository;\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Symfony\\Component\\Security\\Core\\User\\PasswordAuthenticatedUserInterface;\nuse Symfony\\Component\\Security\\Core\\User\\UserInterface;\n\n#[ORM\\Entity(repositoryClass: UserClientRepository::class)]\nclass UserClient implements UserInterface, PasswordAuthenticatedUserInterface\n{\n    #[ORM\\Id]\n    #[ORM\\GeneratedValue]\n    #[ORM\\Column]\n    private ?int $id = null;\n\n    #[ORM\\Column(length: 180, unique: true)]\n    private ?string $email = null;\n\n    #[ORM\\Column]\n    private array $roles = [];\n\n    /**\n     * @var string The hashed password\n     */\n    #[ORM\\Column]\n    private ?string $password = null;\n\n   \n\n    #[ORM\\Column(length: 255)]\n    private ?string $username = null;\n\n    public function getId(): ?int\n    {\n        return $this->id;\n    }\n\n    public function getEmail(): ?string\n    {\n        return $this->email;\n    }\n\n    public function setEmail(string $email): self\n    {\n        $this->email = $email;\n\n        return $this;\n    }\n\n    /**\n     * A visual identifier that represents this user.\n     *\n     * @see UserInterface\n     */\n    public function getUserIdentifier(): string\n    {\n        return (string) $this->email;\n    }\n\n    /**\n     * @see UserInterface\n     */\n    public function getRoles(): array\n    {\n        $roles = $this->roles;\n        // guarantee every user at least has ROLE_USER\n        $roles[] = 'ROLE_USER';\n\n        return array_unique($roles);\n    }\n\n    public function setRoles(array $roles): self\n    {\n        $this->roles = $roles;\n\n        return $this;\n    }\n\n    /**\n     * @see PasswordAuthenticatedUserInterface\n     */\n    public function getPassword(): string\n    {\n        return $this->password;\n    }\n\n    public function setPassword(string $password): self\n    {\n        $this->password = $password;\n\n        return $this;\n    }\n\n    /**\n     * @see UserInterface\n     */\n    public function eraseCredentials()\n    {\n        // If you store any temporary, sensitive data on the user, clear it here\n        // $this->plainPassword = null;\n    }\n\n    public function getUser(): ?string\n    {\n        return $this->User;\n    }\n\n    public function setUser(string $User): self\n    {\n        $this->User = $User;\n\n        return $this;\n    }\n\n    public function getUsername(): ?string\n    {\n        return $this->username;\n    }\n\n    public function setUsername(string $username): self\n    {\n        $this->username = $username;\n\n        return $this;\n    }\n}\n"
+        }
+    ]
+}

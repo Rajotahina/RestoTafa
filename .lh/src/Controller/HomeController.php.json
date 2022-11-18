@@ -1,0 +1,134 @@
+{
+    "sourceFile": "src/Controller/HomeController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1668681869139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668681883015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-    \n+    #[]\n }\n"
+                },
+                {
+                    "date": 1668681888641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-    #[]\n+    #[@Route(\"/path\",name=\"name\")]\n }\n"
+                },
+                {
+                    "date": 1668681900436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-    #[@Route(\"/path\",name=\"name\")]\n+    #[@Route(\"/menu\",name=\"menu\")]\n }\n"
+                },
+                {
+                    "date": 1668681906741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,6 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n     #[@Route(\"/menu\",name=\"menu\")]\n+    pu\n }\n"
+                },
+                {
+                    "date": 1668681915276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n     #[@Route(\"/menu\",name=\"menu\")]\n-    pu\n+    public function \n }\n"
+                },
+                {
+                    "date": 1668681923749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-    #[@Route(\"/menu\",name=\"menu\")]\n-    public function \n+   \n }\n"
+                },
+                {
+                    "date": 1668682065999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   \n+   #\n }\n"
+                },
+                {
+                    "date": 1668682071398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   #\n+   #[R]\n }\n"
+                },
+                {
+                    "date": 1668682081314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   #[R]\n+   #[Route('')]\n }\n"
+                },
+                {
+                    "date": 1668682087416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   #[Route('')]\n+   #[Route('/menu' )]\n }\n"
+                },
+                {
+                    "date": 1668682096447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   #[Route('/menu' )]\n+   #[Route('/menu' , name: )]\n }\n"
+                },
+                {
+                    "date": 1668682107857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,7 @@\n         return $this->render('home/index.html.twig', [\n             'controller_name' => 'HomeController',\n         ]);\n     }\n-   #[Route('/menu' , name: )]\n+   #[Route('/menu' , name:'menu' )]\n+   \n }\n"
+                },
+                {
+                    "date": 1668682115167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n    #[Route('/menu' , name:'menu' )]\n-   \n+   public function\n }\n"
+                },
+                {
+                    "date": 1668682121208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n    #[Route('/menu' , name:'menu' )]\n-   public function\n+   public function menu()\n }\n"
+                },
+                {
+                    "date": 1668682127375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n    #[Route('/menu' , name:'menu' )]\n-   public function menu()\n+   public function menu():Res\n }\n"
+                },
+                {
+                    "date": 1668682134655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,9 @@\n             'controller_name' => 'HomeController',\n         ]);\n     }\n    #[Route('/menu' , name:'menu' )]\n-   public function menu():Res\n+   public function menu():Response\n+   {\n+    \n+   }\n }\n"
+                },
+                {
+                    "date": 1668682140622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-    \n+        return\n    }\n }\n"
+                },
+                {
+                    "date": 1668682147155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return\n+        return $this-\n    }\n }\n"
+                },
+                {
+                    "date": 1668682153910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this-\n+        return $this->render\n    }\n }\n"
+                },
+                {
+                    "date": 1668682160105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render\n+        return $this->render('home')\n    }\n }\n"
+                },
+                {
+                    "date": 1668682165367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render('home')\n+        return $this->render('home/index')\n    }\n }\n"
+                },
+                {
+                    "date": 1668682171058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render('home/index')\n+        return $this->render('home/index.html.twig')\n    }\n }\n"
+                },
+                {
+                    "date": 1668682176469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render('home/index.html.twig')\n+        return $this->render('home/menu.html.twig')\n    }\n }\n"
+                },
+                {
+                    "date": 1668682186428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,7 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render('home/menu.html.twig')\n+        return $this->render('home/menu.html.twig',)\n    }\n }\n"
+                },
+                {
+                    "date": 1668682195313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,9 @@\n     }\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n-        return $this->render('home/menu.html.twig',)\n+        return $this->render('home/menu.html.twig',[\n+            ''\n+        ])\n    }\n }\n"
+                },
+                {
+                    "date": 1668682202671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n         return $this->render('home/menu.html.twig',[\n-            ''\n+            'controller_name'\n         ])\n    }\n }\n"
+                },
+                {
+                    "date": 1668682208858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n         return $this->render('home/menu.html.twig',[\n-            'controller_name'\n+            'controller_name' =>\n         ])\n    }\n }\n"
+                },
+                {
+                    "date": 1668682219144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n         return $this->render('home/menu.html.twig',[\n-            'controller_name' =>\n+            'controller_name' =>'Home'\n         ])\n    }\n }\n"
+                },
+                {
+                    "date": 1668682229272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n    #[Route('/menu' , name:'menu' )]\n    public function menu():Response\n    {\n         return $this->render('home/menu.html.twig',[\n-            'controller_name' =>'Home'\n-        ])\n+            'controller_name' =>'HomeController',\n+        ]);\n    }\n }\n"
+                }
+            ],
+            "date": 1668681869139,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass HomeController extends AbstractController\n{\n    #[Route('/home', name: 'app_home')]\n    public function index(): Response\n    {\n        return $this->render('home/index.html.twig', [\n            'controller_name' => 'HomeController',\n        ]);\n    }\n    \n}\n"
+        }
+    ]
+}
