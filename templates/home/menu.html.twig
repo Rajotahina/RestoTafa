@@ -4,40 +4,43 @@
 {% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
 
-	<div class="container">
+<div class="container">
 
-		<div class="card mb-3" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-md-4 bg-image hover-zoom">
-					<img src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp" alt="Trendy Pants and Shoes" class="img-fluid rounded-start"/>
-				</div>
-				<div class="col-md-8">
+	<div class="row">
+
+		{% for Product in products %}
+			<div class="col-md-4">
+
+				<div class="card">
+					<!-- Card image -->
+					<div class="view overlay">
+						<img class="card-img-top" src="{{ asset('upload/images/products/'~Product.image) }}" alt="Card image cap">
+						<a href="#!">
+							<div class="mask rgba-white-slight"></div>
+						</a>
+					</div>
+					<!-- Card content -->
 					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
+						<!-- Title -->
+						<h4 class="card-title">{{Product.name}}</h4>
+						<h1>publier le {{ Product.createdAt ? Product.createdAt|date('Y-m-d H:i:s') : '' }}</h1>
+						<h2>mise à jour le <td>{{ Product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td></h2>
+						<!-- Text -->
 						<p class="card-text">
-							This is a wider card with supporting text below as a natural lead-in to
-							          additional content. This content is a little bit longer.
+							{{Product.description | raw}}
+							<h1>{{Product.price}}</h1>
 						</p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
+						<!-- Button -->
+						<a href="{{ path('app_achat_show', {'id': Product.id}) }}" class="btn btn-primary">acheter</a>
+						
 					</div>
 				</div>
 			</div>
-		</div>
-
+		{% endfor %}
 	</div>
+</div>
+<!-- Card -->
+
 {% endblock %}
+

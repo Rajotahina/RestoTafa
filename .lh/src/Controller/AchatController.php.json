@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/Controller/AchatController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1668784587226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668785878355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('/{id}', name: 'app_achat_show', methods: ['GET'])]\n+    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785893718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET'])]\n+    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET', 'PO'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785906809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET', 'PO'])]\n+    #[Route('achat/{id}', name: 'app_achat_show']\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785918695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('achat/{id}', name: 'app_achat_show']\n+    #[Route('achat/{id}', name: 'app_achat_show')]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785930540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('achat/{id}', name: 'app_achat_show')]\n+    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785941356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('achat/{id}', name: 'app_achat_show', methods: ['GET'])]\n+    #[Route('/{id}', name: 'app_achat_show', methods: ['GET'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668785970254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('/{id}', name: 'app_achat_show', methods: ['GET'])]\n+    #[Route('/{id}/achat', name: 'app_achat_show', methods: ['GET'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668786010213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             'form' => $form,\n         ]);\n     }\n \n-    #[Route('/{id}/achat', name: 'app_achat_show', methods: ['GET'])]\n+    #[Route('/{id}', name: 'app_achat_show', methods: ['GET'])]\n     public function show(Product $product): Response\n     {\n         return $this->render('achat/show.html.twig', [\n             'product' => $product,\n"
+                },
+                {
+                    "date": 1668787057948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n             'product' => $product,\n         ]);\n     }\n \n-    #[Route('/{id}/edit', name: 'show', methods: ['GET', 'POST'])]\n+    #[Route('/{id}/edit', name: 'app_achat_edit', methods: ['GET', 'POST'])]\n     public function edit(Request $request, Product $product, ProductRepository $productRepository): Response\n     {\n         $form = $this->createForm(ProductType::class, $product);\n         $form->handleRequest($request);\n"
+                }
+            ],
+            "date": 1668784587226,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse App\\Entity\\Product;\nuse App\\Form\\ProductType;\nuse App\\Repository\\ProductRepository;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\n#[Route('/achat')]\nclass AchatController extends AbstractController\n{\n    #[Route('/', name: 'app_achat_index', methods: ['GET'])]\n    public function index(ProductRepository $productRepository): Response\n    {\n        return $this->render('achat/index.html.twig', [\n            'products' => $productRepository->findAll(),\n        ]);\n    }\n\n    #[Route('/new', name: 'app_achat_new', methods: ['GET', 'POST'])]\n    public function new(Request $request, ProductRepository $productRepository): Response\n    {\n        $product = new Product();\n        $form = $this->createForm(ProductType::class, $product);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $productRepository->save($product, true);\n\n            return $this->redirectToRoute('app_achat_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->renderForm('achat/new.html.twig', [\n            'product' => $product,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_achat_show', methods: ['GET'])]\n    public function show(Product $product): Response\n    {\n        return $this->render('achat/show.html.twig', [\n            'product' => $product,\n        ]);\n    }\n\n    #[Route('/{id}/edit', name: 'show', methods: ['GET', 'POST'])]\n    public function edit(Request $request, Product $product, ProductRepository $productRepository): Response\n    {\n        $form = $this->createForm(ProductType::class, $product);\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted() && $form->isValid()) {\n            $productRepository->save($product, true);\n\n            return $this->redirectToRoute('app_achat_index', [], Response::HTTP_SEE_OTHER);\n        }\n\n        return $this->renderForm('achat/edit.html.twig', [\n            'product' => $product,\n            'form' => $form,\n        ]);\n    }\n\n    #[Route('/{id}', name: 'app_achat_delete', methods: ['POST'])]\n    public function delete(Request $request, Product $product, ProductRepository $productRepository): Response\n    {\n        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {\n            $productRepository->remove($product, true);\n        }\n\n        return $this->redirectToRoute('app_achat_index', [], Response::HTTP_SEE_OTHER);\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "sourceFile": "templates/achat/show.html.twig",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1668786157044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668786515908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n     </table>\n \n     <a href=\"{{ path('app_achat_index') }}\">back to list</a>\n \n-    <a href=\"{{ path('show', {'id': product.id}) }}\">edit</a>\n+    <a href=\"{{ path('show', {'id': Product.id}) }}\">edit</a>\n \n     {{ include('achat/_delete_form.html.twig') }}\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668786931147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n-                <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ Product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n         </tbody>\n     </table>\n \n"
+                },
+                {
+                    "date": 1668786942604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,13 @@\n                 <td>{{ product.active ? 'Yes' : 'No' }}</td>\n             </tr>\n             <tr>\n                 <th>CreatedAt</th>\n-                <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ Product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n-                <td>{{ Product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ Product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n         </tbody>\n     </table>\n \n"
+                },
+                {
+                    "date": 1668786953485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n                 <td>{{ product.image }}</td>\n             </tr>\n             <tr>\n                 <th>Active</th>\n-                <td>{{ product.active ? 'Yes' : 'No' }}</td>\n+                <td>{{ roduct.active ? 'Yes' : 'No' }}</td>\n             </tr>\n             <tr>\n                 <th>CreatedAt</th>\n-                <td>{{ Product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ Product.createdAt ? Product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n                 <td>{{ Product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n"
+                },
+                {
+                    "date": 1668786959461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n                 <td>{{ product.image }}</td>\n             </tr>\n             <tr>\n                 <th>Active</th>\n-                <td>{{ roduct.active ? 'Yes' : 'No' }}</td>\n+                <td>{{ product.active ? 'Yes' : 'No' }}</td>\n             </tr>\n             <tr>\n                 <th>CreatedAt</th>\n-                <td>{{ Product.createdAt ? Product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ product.createdAt ? Product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n                 <td>{{ Product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n"
+                },
+                {
+                    "date": 1668786966392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,13 @@\n                 <td>{{ product.active ? 'Yes' : 'No' }}</td>\n             </tr>\n             <tr>\n                 <th>CreatedAt</th>\n-                <td>{{ product.createdAt ? Product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n-                <td>{{ Product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n         </tbody>\n     </table>\n \n"
+                },
+                {
+                    "date": 1668786975037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,15 +36,15 @@\n                 <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n             <tr>\n                 <th>UpdatedAt</th>\n-                <td>{{ product.updatedAt ? Product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n+                <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n             </tr>\n         </tbody>\n     </table>\n \n     <a href=\"{{ path('app_achat_index') }}\">back to list</a>\n \n-    <a href=\"{{ path('show', {'id': Product.id}) }}\">edit</a>\n+    <a href=\"{{ path('show', {'id': product.id}) }}\">edit</a>\n \n     {{ include('achat/_delete_form.html.twig') }}\n {% endblock %}\n"
+                },
+                {
+                    "date": 1668787129390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,8 @@\n     </table>\n \n     <a href=\"{{ path('app_achat_index') }}\">back to list</a>\n \n-    <a href=\"{{ path('show', {'id': product.id}) }}\">edit</a>\n+    <a href=\"{{ path('app_achat_show', {'id': product.id}) }}\">edit</a>\n \n     {{ include('achat/_delete_form.html.twig') }}\n {% endblock %}\n"
+                }
+            ],
+            "date": 1668786157044,
+            "name": "Commit-0",
+            "content": "{% extends 'base.html.twig' %}\n\n{% block title %}Product{% endblock %}\n\n{% block body %}\n    <h1>Product</h1>\n\n    <table class=\"table\">\n        <tbody>\n            <tr>\n                <th>Id</th>\n                <td>{{ product.id }}</td>\n            </tr>\n            <tr>\n                <th>Name</th>\n                <td>{{ product.name }}</td>\n            </tr>\n            <tr>\n                <th>Description</th>\n                <td>{{ product.description }}</td>\n            </tr>\n            <tr>\n                <th>Price</th>\n                <td>{{ product.price }}</td>\n            </tr>\n            <tr>\n                <th>Image</th>\n                <td>{{ product.image }}</td>\n            </tr>\n            <tr>\n                <th>Active</th>\n                <td>{{ product.active ? 'Yes' : 'No' }}</td>\n            </tr>\n            <tr>\n                <th>CreatedAt</th>\n                <td>{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>\n            </tr>\n            <tr>\n                <th>UpdatedAt</th>\n                <td>{{ product.updatedAt ? product.updatedAt|date('Y-m-d H:i:s') : '' }}</td>\n            </tr>\n        </tbody>\n    </table>\n\n    <a href=\"{{ path('app_achat_index') }}\">back to list</a>\n\n    <a href=\"{{ path('show', {'id': product.id}) }}\">edit</a>\n\n    {{ include('achat/_delete_form.html.twig') }}\n{% endblock %}\n"
+        }
+    ]
+}

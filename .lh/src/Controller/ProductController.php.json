@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/Controller/ProductController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1668778013723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1668778062221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,8 @@\n     {\n         return $this->render('product/index.html.twig', [\n             'controller_name' => 'ProductController',\n         ]);\n-        \n+\n     }\n+    \n }\n"
+                },
+                {
+                    "date": 1668778107651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,13 @@\n \n class ProductController extends AbstractController\n {\n     #[Route('/product', name: 'app_product')]\n-    public function index(): Response\n+    public function index(Product): Response\n     {\n         return $this->render('product/index.html.twig', [\n             'controller_name' => 'ProductController',\n         ]);\n \n     }\n-    \n+\n }\n"
+                },
+                {
+                    "date": 1668778113810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n <?php\n \n namespace App\\Controller;\n \n+use App\\Repository\\ProductRepository;\n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class ProductController extends AbstractController\n {\n     #[Route('/product', name: 'app_product')]\n-    public function index(Product): Response\n+    public function index(ProductRepository $): Response\n     {\n         return $this->render('product/index.html.twig', [\n             'controller_name' => 'ProductController',\n         ]);\n"
+                },
+                {
+                    "date": 1668778137983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n \n class ProductController extends AbstractController\n {\n     #[Route('/product', name: 'app_product')]\n-    public function index(ProductRepository $): Response\n+    public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            'controller_name' => 'ProductController',\n+            \n         ]);\n \n     }\n \n"
+                },
+                {
+                    "date": 1668778153097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            \n+            P\n         ]);\n \n     }\n \n"
+                },
+                {
+                    "date": 1668778164931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            P\n+            'product'\n         ]);\n \n     }\n \n"
+                },
+                {
+                    "date": 1668778175986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            'product'\n-        ]);\n+            'products'\n+ =        ]);\n \n     }\n \n }\n"
+                },
+                {
+                    "date": 1668778184827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            'products'\n- =        ]);\n+            'products' => \n+        ]);\n \n     }\n \n }\n"
+                },
+                {
+                    "date": 1668778192432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            'products' => \n+            'products' => $productRepository->find\n         ]);\n \n     }\n \n"
+                },
+                {
+                    "date": 1668778198378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n         return $this->render('product/index.html.twig', [\n-            'products' => $productRepository->find\n+            'products' => $productRepository->findAll()\n         ]);\n \n     }\n \n"
+                },
+                {
+                    "date": 1668778229744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n-        return $this->render('product/index.html.twig', [\n+        return $this->render('home/index.html.twig', [\n             'products' => $productRepository->findAll()\n         ]);\n \n     }\n"
+                },
+                {
+                    "date": 1668778235053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n {\n     #[Route('/product', name: 'app_product')]\n     public function index(ProductRepository $productRepository): Response\n     {\n-        return $this->render('home/index.html.twig', [\n+        return $this->render('home/menu.html.twig', [\n             'products' => $productRepository->findAll()\n         ]);\n \n     }\n"
+                },
+                {
+                    "date": 1668778470857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,6 @@\n use Symfony\\Component\\Routing\\Annotation\\Route;\n \n class ProductController extends AbstractController\n {\n-    #[Route('/product', name: 'app_product')]\n-    public function index(ProductRepository $productRepository): Response\n-    {\n-        return $this->render('home/menu.html.twig', [\n-            'products' => $productRepository->findAll()\n-        ]);\n-\n-    }\n-\n+   \n }\n"
+                }
+            ],
+            "date": 1668778013723,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Controller;\n\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass ProductController extends AbstractController\n{\n    #[Route('/product', name: 'app_product')]\n    public function index(): Response\n    {\n        return $this->render('product/index.html.twig', [\n            'controller_name' => 'ProductController',\n        ]);\n        \n    }\n}\n"
+        }
+    ]
+}

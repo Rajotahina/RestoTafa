@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1668693925315,
@@ -24,6 +24,54 @@
                 {
                     "date": 1668696278705,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n             return new RedirectResponse($targetPath);\n         }\n \n         // For example:\n-         return new RedirectResponse($this->urlGenerator->generate('menu'));\n+         return new RedirectResponse($this->urlGenerator->generate('app_login'));\n        // throw new \\Exception('TODO: provide a valid redirect inside '.__FILE__);\n     }\n \n     protected function getLoginUrl(Request $request): string\n"
+                },
+                {
+                    "date": 1669107255791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n class UserclientAuthenticator extends AbstractLoginFormAuthenticator\n {\n     use TargetPathTrait;\n \n-    public const LOGIN_ROUTE = 'app_login';\n+    public const LOGIN_ROUTE = 'app_home';\n \n     public function __construct(private UrlGeneratorInterface $urlGenerator)\n     {\n     }\n"
+                },
+                {
+                    "date": 1669107310661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n class UserclientAuthenticator extends AbstractLoginFormAuthenticator\n {\n     use TargetPathTrait;\n \n-    public const LOGIN_ROUTE = 'app_home';\n+    public const LOGIN_ROUTE = 'app_login';\n \n     public function __construct(private UrlGeneratorInterface $urlGenerator)\n     {\n     }\n"
+                },
+                {
+                    "date": 1669107316488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n             return new RedirectResponse($targetPath);\n         }\n \n         // For example:\n-         return new RedirectResponse($this->urlGenerator->generate('app_login'));\n+         return new RedirectResponse($this->urlGenerator->generate('app_home'));\n        // throw new \\Exception('TODO: provide a valid redirect inside '.__FILE__);\n     }\n \n     protected function getLoginUrl(Request $request): string\n"
+                },
+                {
+                    "date": 1669107467111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n             return new RedirectResponse($targetPath);\n         }\n \n         // For example:\n-         return new RedirectResponse($this->urlGenerator->generate('app_home'));\n+         return new RedirectResponse($this->urlGenerator->generate('app_achat_index'));\n        // throw new \\Exception('TODO: provide a valid redirect inside '.__FILE__);\n     }\n \n     protected function getLoginUrl(Request $request): string\n"
+                },
+                {
+                    "date": 1669107481855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n class UserclientAuthenticator extends AbstractLoginFormAuthenticator\n {\n     use TargetPathTrait;\n \n-    public const LOGIN_ROUTE = 'app_login';\n+    public const LOGIN_ROUTE = 'app_achat_index';\n \n     public function __construct(private UrlGeneratorInterface $urlGenerator)\n     {\n     }\n"
+                },
+                {
+                    "date": 1669107698232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n class UserclientAuthenticator extends AbstractLoginFormAuthenticator\n {\n     use TargetPathTrait;\n \n-    public const LOGIN_ROUTE = 'app_achat_index';\n+    public const LOGIN_ROUTE = 'app_';\n \n     public function __construct(private UrlGeneratorInterface $urlGenerator)\n     {\n     }\n"
+                },
+                {
+                    "date": 1669107810697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n class UserclientAuthenticator extends AbstractLoginFormAuthenticator\n {\n     use TargetPathTrait;\n \n-    public const LOGIN_ROUTE = 'app_';\n+    public const LOGIN_ROUTE = 'app_login';\n \n     public function __construct(private UrlGeneratorInterface $urlGenerator)\n     {\n     }\n@@ -32,9 +32,9 @@\n         $request->getSession()->set(Security::LAST_USERNAME, $email);\n \n         return new Passport(\n             new UserBadge($email),\n-            new PasswordCredentials($request->request->get('password', '')),\n+            new PasswordCredentials($request->request->get('plainPassword', '')),\n             [\n                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),\n             ]\n         );\n"
+                },
+                {
+                    "date": 1669107826424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         $request->getSession()->set(Security::LAST_USERNAME, $email);\n \n         return new Passport(\n             new UserBadge($email),\n-            new PasswordCredentials($request->request->get('plainPassword', '')),\n+            new PasswordCredentials($request->request->get('password', '')),\n             [\n                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),\n             ]\n         );\n"
+                },
+                {
+                    "date": 1669107833507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         $request->getSession()->set(Security::LAST_USERNAME, $email);\n \n         return new Passport(\n             new UserBadge($email),\n-            new PasswordCredentials($request->request->get('password', '')),\n+            new PasswordCredentials($request->request->get('plainPassword', '')),\n             [\n                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),\n             ]\n         );\n"
+                },
+                {
+                    "date": 1669107840235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         $request->getSession()->set(Security::LAST_USERNAME, $email);\n \n         return new Passport(\n             new UserBadge($email),\n-            new PasswordCredentials($request->request->get('plainPassword', '')),\n+            new PasswordCredentials($request->request->get('password', '')),\n             [\n                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),\n             ]\n         );\n"
+                },
+                {
+                    "date": 1669108169752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n             return new RedirectResponse($targetPath);\n         }\n \n         // For example:\n-         return new RedirectResponse($this->urlGenerator->generate('app_achat_index'));\n+         return new RedirectResponse($this->urlGenerator->generate(' '));\n        // throw new \\Exception('TODO: provide a valid redirect inside '.__FILE__);\n     }\n \n     protected function getLoginUrl(Request $request): string\n"
+                },
+                {
+                    "date": 1669108179624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n             return new RedirectResponse($targetPath);\n         }\n \n         // For example:\n-         return new RedirectResponse($this->urlGenerator->generate(' '));\n+         return new RedirectResponse($this->urlGenerator->generate('app_login'));\n        // throw new \\Exception('TODO: provide a valid redirect inside '.__FILE__);\n     }\n \n     protected function getLoginUrl(Request $request): string\n"
                 }
             ],
             "date": 1668693925315,

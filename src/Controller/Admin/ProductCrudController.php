@@ -28,8 +28,8 @@ class ProductCrudController extends AbstractCrudController
 {
 
     public const ACTION_DUPLICATE = 'duplicate';
-    public const PRODUCT_BASE_PATH ='upload/images/products';
-    public const PRODUCT_UPLOAD_DIR ='public/upload/images/products';
+    public const PRODUCT_BASE_PATH = 'upload/images/products';
+    public const PRODUCT_UPLOAD_DIR = 'public/upload/images/products';
     public static function getEntityFqcn(): string
     {
         return Product::class;
@@ -37,25 +37,25 @@ class ProductCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $duplicate = Action::new(self::ACTION_DUPLICATE)
-        ->linkToCrudAction('duplicateProduct')
-        ->setCssClass('btn btn-info');
+            ->linkToCrudAction('duplicateProduct')
+            ->setCssClass('btn btn-info');
         return $actions
-        ->add(Crud::PAGE_EDIT , $duplicate)
-        ->reorder(Crud::PAGE_EDIT ,[self::ACTION_DUPLICATE ,Action::SAVE_AND_RETURN]);
+            ->add(Crud::PAGE_EDIT, $duplicate)
+            ->reorder(Crud::PAGE_EDIT, [self::ACTION_DUPLICATE, Action::SAVE_AND_RETURN]);
     }
-    
+
     // public static function getEntityFqcn(): string
     // {
     //     return Product::class;
     // }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            TextEditorField::new('description'),
+            TextField::new('description'),
             MoneyField::new('price')->setCurrency('MGA'),
             ImageField::new('image')
                 ->setBasePath(self::PRODUCT_BASE_PATH)
@@ -63,47 +63,46 @@ class ProductCrudController extends AbstractCrudController
                 ->setSortable(false),
             BooleanField::new('active'),
             AssociationField::new('Categorie'),
-            //DateTimeField::new('updatedAt')->hideOnForm(),
+            DateTimeField::new('updatedAt')->hideOnForm(),
             DateTimeField::new('createdAt')->hideOnForm(),
         ];
     }
-    public function persistEntity(EntityManagerInterface $em , $entityInstance): void
+    public function persistEntity(EntityManagerInterface $em, $entityInstance): void
     {
-        if(!$entityInstance instanceof Product) return;
-        $entityInstance->setCreatedAt(new \DateTimeImmutable );
-        parent::persistEntity($em ,$entityInstance);
+        if (!$entityInstance instanceof Product) return;
+        $entityInstance->setCreatedAt(new \DateTimeImmutable);
+        parent::persistEntity($em, $entityInstance);
     }
     public function updateEntity(EntityManagerInterface $em, $entityInstance): void
     {
-        if(!$entityInstance instanceof Product) return;
-        $entityInstance->setUpdatedAt(new \DateTimeImmutable() );
-        parent::updateEntity($em ,$entityInstance);  
+        if (!$entityInstance instanceof Product) return;
+        $entityInstance->setUpdatedAt(new \DateTimeImmutable());
+        parent::updateEntity($em, $entityInstance);
     }
 
     public function deleteEntity(EntityManagerInterface $em, $entityInstance): void
     {
-        if(!$entityInstance instanceof Product) return;
-        foreach($entityInstance->getProducts as $product){
+        if (!$entityInstance instanceof Product) return;
+        foreach ($entityInstance->getProducts as $product) {
             $em->remove($product);
         }
-        parent::deleteEntity($em , $entityInstance);
+        parent::deleteEntity($em, $entityInstance);
     }
 
-    public function duplicateProduct(AdminContext $context ,
-    AdminUrlGenerator $adminUrlGenerator ,
-    EntityManagerInterface $em ): HttpFoundationResponse
-    {
+    public function duplicateProduct(
+        AdminContext $context,
+        AdminUrlGenerator $adminUrlGenerator,
+        EntityManagerInterface $em
+    ): HttpFoundationResponse {
         $product = $context->getEntity()->getInstance();
         $duplicateProduct = clone $product;
-        parent::persistEntity($em ,$duplicateProduct);
+        parent::persistEntity($em, $duplicateProduct);
 
         $url = $adminUrlGenerator->setController(self::class)
-        ->setAction(Action::DETAIL)
-        ->setEntityId($duplicateProduct->getId())
-        ->generateUrl();
+            ->setAction(Action::DETAIL)
+            ->setEntityId($duplicateProduct->getId())
+            ->generateUrl();
 
         return $this->redirect($url);
     }
 }
-    
-

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1668696350435,
@@ -56,6 +56,62 @@
                 {
                     "date": 1668698374953,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n     #[Route(path: '/logout', name: 'app_logout')]\n     public function logout(): void\n     {\n-        //throw new \\LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.')\n+        throw new \\LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');\n         //return $this->redirectToRoute('app_home');\n \n     }\n }\n"
+                },
+                {
+                    "date": 1669105415837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n+        dd()\n \n         // get the login error if there is one\n         $error = $authenticationUtils->getLastAuthenticationError();\n         // last username entered by the user\n"
+                },
+                {
+                    "date": 1669105421562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n-        dd()\n+        \n \n         // get the login error if there is one\n         $error = $authenticationUtils->getLastAuthenticationError();\n         // last username entered by the user\n"
+                },
+                {
+                    "date": 1669105873942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n class SecurityController extends AbstractController\n {\n     #[Route(path: '/login', name: 'app_login')]\n-    public function login(AuthenticationUtils $authenticationUtils): Response\n+    public function login(AuthenticationUtils $authenticationUtils, ): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n"
+                },
+                {
+                    "date": 1669105879400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n class SecurityController extends AbstractController\n {\n     #[Route(path: '/login', name: 'app_login')]\n-    public function login(AuthenticationUtils $authenticationUtils, ): Response\n+    public function login(AuthenticationUtils $authenticationUtils,  $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n"
+                },
+                {
+                    "date": 1669105886187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,17 @@\n \n namespace App\\Controller;\n \n use Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\n+use Symfony\\Component\\HttpFoundation\\Request;\n use Symfony\\Component\\HttpFoundation\\Response;\n use Symfony\\Component\\Routing\\Annotation\\Route;\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n     #[Route(path: '/login', name: 'app_login')]\n-    public function login(AuthenticationUtils $authenticationUtils,  $request): Response\n+    public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n"
+                },
+                {
+                    "date": 1669105892488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n-        \n+        dd($re)\n \n         // get the login error if there is one\n         $error = $authenticationUtils->getLastAuthenticationError();\n         // last username entered by the user\n"
+                },
+                {
+                    "date": 1669105924099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n-        dd($re)\n+        dump($request);\n \n         // get the login error if there is one\n         $error = $authenticationUtils->getLastAuthenticationError();\n         // last username entered by the user\n"
+                },
+                {
+                    "date": 1669106295966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login')]\n+    #[Route(path: '/login', name: 'app_login'), ]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669106301773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login'), ]\n+    #[Route(path: '/login', name: 'app_login'), methods]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669106307052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login'), methods]\n+    #[Route(path: '/login', name: 'app_login'), methods=\"POST\"]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669106321621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login'), methods=\"POST\"]\n+    #[Route(path: '/login', name: 'app_login', methods=\"POST\"]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669106333546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login', methods=\"POST\"]\n+    #[Route(path: '/login', name: 'app_login', methods:\"POST\")]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669106387587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n use Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\n \n class SecurityController extends AbstractController\n {\n-    #[Route(path: '/login', name: 'app_login', methods:\"POST\")]\n+    #[Route(path: '/login', name: 'app_login')]\n     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n"
+                },
+                {
+                    "date": 1669107999455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         // if ($this->getUser()) {\n         //     return $this->redirectToRoute('target_path');\n         // }\n-        dump($request);\n+        dump($$authenticationUtils->getLastAuthenticationError());\n \n         // get the login error if there is one\n         $error = $authenticationUtils->getLastAuthenticationError();\n         // last username entered by the user\n"
                 }
             ],
             "date": 1668696350435,

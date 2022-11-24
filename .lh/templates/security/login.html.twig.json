@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1668688008343,
@@ -44,6 +44,10 @@
                 {
                     "date": 1668688118710,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n         <input type=\"hidden\" name=\"_csrf_token\"\n             value=\"{{ csrf_token('authenticate') }}\"\n \n-        >br\n+        ><br>\n         <button class=\"btn btn-lg btn-primary\" type=\"submit\">\n         Sign in\n         </button>\n \n"
+                },
+                {
+                    "date": 1669105375898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   </div>\n \n   <!-- Password input -->\n   <div class=\"form-outline mb-4\">\n-    <input type=\"password\" id=\"form2Example2\" name=_\"password\" class=\"form-control\" />\n+    <input type=\"password\" id=\"form2Example2\" name=\"password\" class=\"form-control\" />\n     <label class=\"form-label\" for=\"InputPassword\">Password</label>\n   </div>\n \n   <!-- 2 column grid layout for inline styling -->\n"
                 }
             ],
             "date": 1668688008343,

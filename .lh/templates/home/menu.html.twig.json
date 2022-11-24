@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 41,
+            "activePatchIndex": 60,
             "patches": [
                 {
                     "date": 1668681748083,
@@ -172,6 +172,82 @@
                 {
                     "date": 1668771622217,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,38 +1,43 @@\n {% extends 'base.html.twig' %}\r\n \r\n-{% block title %}Hello HomeController!{% endblock %}\r\n+{% block title %}Hello HomeController!\r\n+{% endblock %}\r\n \r\n {% block body %}\r\n-<style>\r\n-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\r\n-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\r\n-</style>\r\n+\t<style>\r\n+\t\t.example-wrapper {\r\n+\t\t\tmargin: 1em auto;\r\n+\t\t\tmax-width: 800px;\r\n+\t\t\twidth: 95%;\r\n+\t\t\tfont: 18px / 1.5 sans-serif;\r\n+\t\t}\r\n+\t\t.example-wrapper code {\r\n+\t\t\tbackground: #F5F5F5;\r\n+\t\t\tpadding: 2px 6px;\r\n+\t\t}\r\n+\t</style>\r\n \r\n-<div class=\"container\">\r\n+\t<div class=\"container\">\r\n \r\n-<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n-  <div class=\"row g-0\">\r\n-    <div class=\"col-md-4 bg-image hover\">\r\n-      <img\r\n-        src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\"\r\n-        alt=\"Trendy Pants and Shoes\"\r\n-        class=\"img-fluid rounded-start\"\r\n-      />\r\n-    </div>\r\n-    <div class=\"col-md-8\">\r\n-      <div class=\"card-body\">\r\n\\ No newline at end of file\n-        <h5 class=\"card-title\">Card title</h5>\r\n-        <p class=\"card-text\">\r\n-          This is a wider card with supporting text below as a natural lead-in to\r\n-          additional content. This content is a little bit longer.\r\n-        </p>\r\n-        <p class=\"card-text\">\r\n-          <small class=\"text-muted\">Last updated 3 mins ago</small>\r\n-        </p>\r\n-      </div>\r\n-    </div>\r\n-  </div>\r\n-</div>\r\n-    \r\n-</div>\r\n-{% endblock %}\n+\t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n+\t\t\t<div class=\"row g-0\">\r\n+\t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n+\t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n+\t\t\t\t</div>\r\n+\t\t\t\t<div class=\"col-md-8\">\r\n+\t\t\t\t\t<div class=\"card-body\">\r\n+\t\t\t\t\t\t<h5 class=\"card-title\">Card title</h5>\r\n+\t\t\t\t\t\t<p class=\"card-text\">\r\n+\t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n+\t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n+\t\t\t\t\t\t</p>\r\n+\t\t\t\t\t\t<p class=\"card-text\">\r\n+\t\t\t\t\t\t\t<small class=\"text-muted\">Last updated 3 mins ago</small>\r\n+\t\t\t\t\t\t</p>\r\n+\t\t\t\t\t</div>\r\n+\t\t\t\t</div>\r\n+\t\t\t</div>\r\n+\t\t</div>\r\n+\r\n+\t</div>\r\n+{% endblock %}\r\n"
+                },
+                {
+                    "date": 1668774926391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\r\n+\t\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668774947995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t\r\n+\t{}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668774953479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t{}\r\n+\t{%}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668774959093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t{%}\r\n+\t{% for%}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668774973036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,11 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t{% for%}\r\n+\t{% {% for Product in array %}\r\n+\t\t\r\n+\t{% endfor %}%}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668774978385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t{% {% for Product in array %}\r\n+\t{% {% for Product in  %}\r\n \t\t\r\n \t{% endfor %}%}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n"
+                },
+                {
+                    "date": 1668774993560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t{% {% for Product in  %}\r\n+\t {% for Product in Products %}\r\n \t\t\r\n \t{% endfor %}%}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n"
+                },
+                {
+                    "date": 1668774999973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n \t<div class=\"container\">\r\n \t {% for Product in Products %}\r\n \t\t\r\n-\t{% endfor %}%}\r\n+\t\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668775005283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,8 @@\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n \t {% for Product in Products %}\r\n-\t\t\r\n-\t\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668775010943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n \t\t\t\t\t</div>\r\n \t\t\t\t</div>\r\n \t\t\t</div>\r\n \t\t</div>\r\n-\r\n+\t\t\r\n \t</div>\r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1668775027169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n \t\t\t\t</div>\r\n \t\t\t\t<div class=\"col-md-8\">\r\n \t\t\t\t\t<div class=\"card-body\">\r\n-\t\t\t\t\t\t<h5 class=\"card-title\">Card title</h5>\r\n+\t\t\t\t\t\t<h5 class=\"card-title\"></h5>\r\n \t\t\t\t\t\t<p class=\"card-text\">\r\n \t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n \t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n \t\t\t\t\t\t</p>\r\n@@ -37,7 +37,7 @@\n \t\t\t\t\t</div>\r\n \t\t\t\t</div>\r\n \t\t\t</div>\r\n \t\t</div>\r\n-\t\t\r\n+\t{% endfor %}\r\n \t</div>\r\n {% endblock %}\r\n"
+                },
+                {
+                    "date": 1668775047027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n \t\t\t\t</div>\r\n \t\t\t\t<div class=\"col-md-8\">\r\n \t\t\t\t\t<div class=\"card-body\">\r\n-\t\t\t\t\t\t<h5 class=\"card-title\"></h5>\r\n+\t\t\t\t\t\t<h5 class=\"card-title\">{</h5>\r\n \t\t\t\t\t\t<p class=\"card-text\">\r\n \t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n \t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n \t\t\t\t\t\t</p>\r\n"
+                },
+                {
+                    "date": 1668775055053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n \t\t\t\t</div>\r\n \t\t\t\t<div class=\"col-md-8\">\r\n \t\t\t\t\t<div class=\"card-body\">\r\n-\t\t\t\t\t\t<h5 class=\"card-title\">{</h5>\r\n+\t\t\t\t\t\t<h5 class=\"card-title\">{{}}</h5>\r\n \t\t\t\t\t\t<p class=\"card-text\">\r\n \t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n \t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n \t\t\t\t\t\t</p>\r\n"
+                },
+                {
+                    "date": 1668775061184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n \t\t\t\t</div>\r\n \t\t\t\t<div class=\"col-md-8\">\r\n \t\t\t\t\t<div class=\"card-body\">\r\n-\t\t\t\t\t\t<h5 class=\"card-title\">{{}}</h5>\r\n+\t\t\t\t\t\t<h5 class=\"card-title\">{{Product}}</h5>\r\n \t\t\t\t\t\t<p class=\"card-text\">\r\n \t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n \t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n \t\t\t\t\t\t</p>\r\n"
+                },
+                {
+                    "date": 1668775066415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n \t\t\t\t</div>\r\n \t\t\t\t<div class=\"col-md-8\">\r\n \t\t\t\t\t<div class=\"card-body\">\r\n-\t\t\t\t\t\t<h5 class=\"card-title\">{{Product}}</h5>\r\n+\t\t\t\t\t\t<h5 class=\"card-title\">{{Product.name}}</h5>\r\n \t\t\t\t\t\t<p class=\"card-text\">\r\n \t\t\t\t\t\t\tThis is a wider card with supporting text below as a natural lead-in to\r\n \t\t\t\t\t\t\t          additional content. This content is a little bit longer.\r\n \t\t\t\t\t\t</p>\r\n"
+                },
+                {
+                    "date": 1668775101159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t {% for Product in Products %}\r\n+\t {% for Product in Product %}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668775164162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t {% for Product in Product %}\r\n+\t {% for Product in product %}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668775224771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \t\t}\r\n \t</style>\r\n \r\n \t<div class=\"container\">\r\n-\t {% for  in product %}\r\n+\t {% for P in product %}\r\n \t\t<div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n \t\t\t\t<div class=\"col-md-4 bg-image hover-zoom\">\r\n \t\t\t\t\t<img src=\"https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp\" alt=\"Trendy Pants and Shoes\" class=\"img-fluid rounded-start\"/>\r\n"
+                },
+                {
+                    "date": 1668778668989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \r\n \t<div class=\"container\">\r\n \t<div class=\"row\">\r\n \t {% for Product in products %}\r\n-\t\t<div class=\"c\">\r\n+\t\t<div class=\"co\">\r\n \t\t\r\n \t\t</div>\r\n \t <div class=\"card mb-3\" style=\"max-width: 540px;\">\r\n \t\t\t<div class=\"row g-0\">\r\n"
                 }
             ],
             "date": 1668681748083,
